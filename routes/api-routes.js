@@ -19,7 +19,7 @@ module.exports = function(app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     // db.User.create({
-      email: req.body.email,
+      // email: req.body.email,
       password: req.body.password
     })
       .then(() => {
