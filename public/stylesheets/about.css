@@ -1,0 +1,48 @@
+
+/* NavBar */
+
+a.navbar-brand {
+    font-style: oblique;
+  }
+  .navbar-brand h1{
+    color: tan;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+  }
+/*Cards*/
+h2{
+    text-align: center;
+}
+
+/*Footer*/
+.footer {
+    font-family: 'Times New Roman', Times, serif;
+    
+  }
+  #copyright{
+    color:white;
+    font-weight: bold;
+  }
+  .footer p{
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+  }
+  .footer ul{
+    padding-left: 0px;
+  }
+  .footer li{
+    list-style: none;
+    padding: 2px;
+  }
+  .footer a{
+    color: tan;
+  }
+  .footer a:hover{
+    color: white;
+  }
+  .footer-logo {
+    height:125px;
+    height:125px;
+  }
