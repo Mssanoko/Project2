@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Binvoice</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="stylesheets/addaclient.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+    <a class="navbar-brand" href="#">
+        <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="signup.html">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">Log In</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="block-header" class="display-8" style="color: black; font-family: 'Times New Roman', Times, serif; font-style: italic;">Add a client</h1>
+    <hr>
+    <form class="createcustomer">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">First Name</label>
+          <input type="text" class="form-control" id="firstName" />
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Last Name</label>
+          <input type="text" class="form-control" id="lastName" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail4">Email</label>
+          <input type="email" class="form-control" id="inputemails"/></div>
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Street</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder=""/>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputCity">City</label>
+          <input type="text" class="form-control" id="inputCity"/>
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputState">State</label>
+          <input type="text" class="form-control" id="inputState"/>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inputZip">Zip</label>
+          <input type="text" class="form-control" id="inputZip"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputCity">Phone</label>
+          <input type="text" class="form-control" id="inputPhone"/>
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary" id="updateId">
+       Create
+      </button>
+    </form>
+  </div>
