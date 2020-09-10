@@ -16,5 +16,41 @@
   "production": {
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
+  },
+  "hongjingspc": {
+    "username": "root",
+    "password": "hongjing123",
+    "database": "clientDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "lesliespc": {
+    "username": "root",
+    "password": "LeslieRoot",
+    "database": "clientDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "joespc": {
+    "username": "root",
+    "password": "root24",
+    "database": "clientDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "kylespc": {
+    "username": "root",
+    "password": "rootroot",
+    "database": "clientDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+
+  "avispc": {
+    "username": "root",
+    "password": "avik71",
+    "database": "clientDB",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
   }
 }
