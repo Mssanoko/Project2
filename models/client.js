@@ -19,21 +19,21 @@ module.exports = function(sequelize, DataTypes) {
       unique: true
     },
     phone: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true
     },
     newClient: {
-      type: Boolean.default.true,
+      type: DataTypes.BOOLEAN,
       allowNull: false,
       unique: false
     }
   });
-  Client.associate(function(models){
+  Client.associate = function(models){
     Client.hasMany(models.Invoice,{
       onDelete: "cascade"
     });
     
-});
+};
   return Client;
 };

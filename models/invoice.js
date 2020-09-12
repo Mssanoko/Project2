@@ -28,8 +28,8 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         unique: false
       },
-      invoiceAmout: {
-        type: DataTypes.INT,
+      invoiceAmount: {
+        type: DataTypes.INTEGER,
         allowNull: false,
         unique: false
       },
@@ -44,9 +44,9 @@ module.exports = function(sequelize, DataTypes) {
         unique: false
       }
     });
-    Invoice.associate(function(models){
+    Invoice.associate = function(models){
         Invoice.belongsTo(models.Client);
-    });
+    };
     return Invoice;
 
   };
