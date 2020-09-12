@@ -1,3 +1,6 @@
+body {
+  background-color: darkseagreen;
+}
 
 /* NavBar */
 
@@ -9,9 +12,68 @@ a.navbar-brand {
     font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
   }
+/*Title*/
+h1{
+  color: white;
+  font-style: italic;
+  font-family:'Times New Roman', Times, serif;
+  text-align: center;
+}
 /*Cards*/
-h2{
-    text-align: center;
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card-deck {
+  padding: 2px 16px;
+  margin-left: 18%;      
+  margin-right: 18%;
+  width: auto;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  transition: 0.3s;
+}
+.my-flex-card > div > div.card {
+  height: calc(100% - 15px);
+  margin-bottom: 15px;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+img {
+  height: 200px;
 }
 
 /*Footer*/
