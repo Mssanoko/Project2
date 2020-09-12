@@ -8,6 +8,26 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false
     },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      unique: true
+    },
+    phone: {
+      type: DataTypes.INT,
+      allowNull: false,
+      unique: true
+    },
+    newClient: {
+      type: Boolean.default.true,
+      allowNull: false,
+      unique: false
+    }
   });
   Client.associate(function(models){
     Client.hasMany(models.Invoice,{
