@@ -11,12 +11,65 @@ a.navbar-brand {
 }
 
 /*Jumbotron*/
+h1{
+  color: white;
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+}
 #jumboText{
   margin-right: 3em;
   margin-left: 2em;
 }
 #jumboText p{
   font-size: 25px;
+}
+#jumboText p:nth-child(2){
+  margin-top: 1em;
+}
+#jumboText p:nth-child(3){
+  margin-left: 3em;
+}
+#jumboText p:nth-child(4){
+  margin-left: 6em;
+}
+#jumboText p:nth-child(5){
+  margin-left: 10em;
+}
+#jumboText a{
+  color: rgb(189, 84, 45)
+}
+#jumboImg{
+  
+  margin-left: 1em;
+}
+.hero__buttons {
+  margin-left: 260px;
+  font-size: 25px;
+  
+}
+
+
+h2{
+  color: rgb(219, 112, 94);
+}
+.card{
+  border: none;
+  background-color: darkseagreen;
+  display: flex;
+}
+.howuse-section {
+  margin-bottom: -50px;
+}
+.image-petit-format {
+  width: 100px;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
 }
 
 /*Footer*/
