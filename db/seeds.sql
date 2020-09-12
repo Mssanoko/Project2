@@ -1,3 +1,3 @@
 USE clientsDB;
 
-INSERT INTO clients ()
+INSERT INTO clients (clientName) VALUES (Joe Moore)
