@@ -1,6 +1,6 @@
 
 // Creating our  model
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Client = sequelize.define("Client", {
     // The email cannot be null, and must be a proper email before creation
     clientName: {
@@ -19,21 +19,21 @@ module.exports = function(sequelize, DataTypes) {
       unique: true
     },
     phone: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       allowNull: false,
       unique: true
     },
     newClient: {
-      type: Boolean.default.true,
+      type: DataTypes.BOOLEAN,
+      defaultValue: true,
       allowNull: false,
       unique: false
     }
   });
-  Client.associate(function(models){
-    Client.hasMany(models.Invoice,{
+  Client.associate = function(models) {
+    Client.hasMany(models.Invoice, {
       onDelete: "cascade"
     });
-    
-});
+  };
   return Client;
 };
