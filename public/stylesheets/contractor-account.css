@@ -1,6 +1,9 @@
 
-/* NavBar */
+body {
+  background-color: darkseagreen;
+}
 
+/* NavBar */
 a.navbar-brand {
     font-style: oblique;
   }
@@ -23,16 +26,16 @@ a.navbar-brand {
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: darkseagreen;
+    background-color: tan;
     border: none;
     border-radius: 15px;
     box-shadow: 0 5px #999;
   }
   
-  .button:hover {background-color: tan}
+  .button:hover {background-color: lightgray}
   
   .button:active {
-    background-color: darkseagreen;
+    background-color: tan;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
   }
