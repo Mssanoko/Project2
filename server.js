@@ -38,4 +38,4 @@ db.sequelize.sync().then(() => {
     );
   });
 });
-//testinggggggg
+//double checking server file, all good to go
