@@ -2,33 +2,107 @@
 <html lang="en">
 
 <head>
-  <title>Passport Authentication</title>
+  <title>Binvoice</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link href="stylesheets/contractor-account.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
-    </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+    <a class="navbar-brand" href="home.html">
+        <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="log-in.html">Logout</a>
+            </li>
+            
+        </ul>
+    </div>
+</nav>
+
+  <main class="container">
+    <section class="row ">
+      <div class="col-md-8">
+        <article class="block rounded">
+            <br>
+          <h1 class="block-header" class="display-8" style="color:black; font-family: 'Times New Roman', Times, serif; font-style: italic; text-align: center">Welcome <span class="member-name"></span></h1>
+          <br>
+          <h2 style="color:white; font-family: 'Times New Roman', Times, serif; font-style: italic;"> What would you like to do?</h2>
+          <br>
+          <a href="customers.html" target="_blank" class="button">Add a client</a>
+          <a href=""target="_blank" class="button">View your clients</a>
+          <a href=""target="_blank" class="button">View your invoices</a>
+          <a href=""target="_blank" class="button">Create a Invoice</a>
+          <a href=""target="_blank" class="button">Contact Us</a>
+          <a href=""target="_blank" class="button">Get Help</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer bg-secondary navbar-dark mt-5 pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <p>About</p>
+                <ul>
+                    <li><a href="">How It's Works</a></li>
+                    <li><a href="">Our Story</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+                <p>Support</p>
+                <ul>
+                    <li><a href="">FAQ</a></li>
+                    <li><a href="/privacy">Privacy Policy</a></li>
+                    <li><a href="/terms">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-3 d-none d-sm-block">
+                <p>Contact</p>
+                <ul>
+                    <li><a href="">1-800-PRO-JECT</a></li>
+                    <li><a href="">support@binvoice.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-lg-3 d-none d-md-block">
+                <p>Social Media</p>
+                <ul class="social-icons">
+                    <li><a href="https://twitter.com/" target="_blank"><i 
+                                aria-hidden="true"></i>Twitter</a></li>
+                    <li><a href="https://www.instagram.com/" target="_blank"><i
+                                 aria-hidden="true"></i>Instagram</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank"><i
+                                 aria-hidden="true"></i>Facebook</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-2 d-none d-lg-flex flex-column justify-content-between">
+                <div class="row">
+                    <div class="col"><img class="footer-logo" src="stylesheets/images/billing-icon.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" id="copyright">
+            Copyright &copy 2020 Binvoice, Inc. All rights reserved
+        </div>
+    </div>
+</footer>
+
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/members.js"></script>
 
 </body>
 
