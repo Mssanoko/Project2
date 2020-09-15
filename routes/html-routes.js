@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/account");
     }
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
@@ -23,14 +23,14 @@ module.exports = function(app) {
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/account");
     }
     res.sendFile(path.join(__dirname, "../public/sign-up.html"));
   });
   app.get("/login", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/account");
     }
     res.sendFile(path.join(__dirname, "../public/log-in.html"));
   });
