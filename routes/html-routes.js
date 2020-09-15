@@ -5,62 +5,57 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/index", function(req, res) {
+  app.get("/index", (req, res) => {
     res.render("index");
   });
 
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/account");
     }
     res.sendFile(path.join(__dirname, "../public/home.html"));
   });
 
-  app.get("/sign-up", (req,res) =>{
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
-  })
-
-  app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/members");
-    }
-    res.sendFile(path.join(__dirname, "../public/login.html"));
-  });
-
+  // app.get("/sign-up", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/sign-up.html"));
+  // });
   app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect("/members");
+      res.redirect("/account");
     }
     res.sendFile(path.join(__dirname, "../public/sign-up.html"));
   });
-
-  app.get("/customers", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/customers.html"));
-  });
-  app.get("/addaclient", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/addaclient.html"));
-  });
-  app.get("/about", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/about.html"));
+  app.get("/login", (req, res) => {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/account");
+    }
+    res.sendFile(path.join(__dirname, "../public/log-in.html"));
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/members", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/members.html"));
-  
+  app.get("/account", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/account.html"));
+  });
+  app.get("/viewClients", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/viewClients.html"));
+  });
+  app.get("/addaclient", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/add-a-client.html"));
+  });
+  app.get("/createInvoice", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/createInvoice.html"));
+  });
+  app.get("/viewInvoices", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/viewInvoices.html"));
   });
 
-  app.get("/product-services", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/product-services.html"));
+  // app.get("/product-services", isAuthenticated, (req, res) => {
+  //   res.sendFile(path.join(__dirname, "../public/product-services.html"));
+  // });
+  app.get("/about", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/about.html"));
   });
-  app.get("/bill-estimate", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/bill-estimate.html"));
-  });
-  app.get("/customers", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/customers.html"));
-  });
-
 };
