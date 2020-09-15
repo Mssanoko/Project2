@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 ​
-
 <head>
   <title>Binvoice</title>
   <meta charset="UTF-8">
@@ -10,40 +9,38 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
 
-<style>
-  body {
+  <style>
+    body {
       background-color: darkseagreen;
-  }
+    }
 
-  h1 {
+    h1 {
       color: tan;
       font-family: 'Times New Roman', Times, serif;
       text-decoration: underline;
-  }
+    }
 
-  .form-group {
+    .form-group {
 
       background-color: slategray;
       color: tan;
-  }
+    }
 
-  a.navbar-brand {
+    a.navbar-brand {
       font-style: oblique;
-  }
+    }
 
-  a {
-      color:white;
-  }
+    a {
+      color: white;
+    }
+  </style>
 
-  
-</style>
+</head>
 ​
-
 <body>
-   <!-- navbar -->
-   <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
     <a class="navbar-brand" href="#">
         <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
     </a>
@@ -52,14 +49,33 @@
     </button>
     <links class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav ml-auto">
+            <!-- navbar links -->
             <li class="nav-item">
-                <a class="nav-link" href="customers.html"><h4>Customers</h4></a>
+                <a class="nav-link" href="home.html">
+                    <h4>Home</h4>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="account.html">
+                    <h4>Account</h4>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="create-invoice.html">
+                    <h4>Create Invoice</h4>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="products-services.html"><h4>Products/Services</h4></a>
+                <a class="nav-link" href="about.html">
+                    <h4>About Us/Help</h4>
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="bill-estimate.html"><h4>Billing/Estimates</h4></a>
+                <a class="nav-link" href="log-in.html">
+                    <h4>Log Out</h4>
+                </a>
             </li>
         </ul>
     </links>
@@ -73,11 +89,15 @@
         <hr>
         <form class="login">
           <div class="form-group">
-            <label for="exampleInputEmail1"><h5>Email address:</h5></label>
+            <label for="exampleInputEmail1">
+              <h5>Email address:</h5>
+            </label>
             <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1"><h5>Password:</h5></label>
+            <label for="exampleInputPassword1">
+              <h5>Password:</h5>
+            </label>
             <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
           <button type="submit" class="btn btn-secondary">Login</button>
