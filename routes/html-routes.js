@@ -56,8 +56,29 @@ module.exports = function(app) {
   app.get("/product-services", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/product-services.html"));
   });
+  // We will convert this page into client stripe checkout
   app.get("/bill-estimate", isAuthenticated, (req, res) => {
+    // mock data to pass to /bill-estimate page using handlebars
+    var bills = {
+        bills: [
+            {
+                name: "invoice",
+                unit_amount: 2000,
+                quantity: 1,
+            },
+            {
+                name: "invoice2",
+                unit_amount: 200,
+                quantity: 10,
+            },
+        ]
+    };
+    // create handlebars below with res.render()
     res.sendFile(path.join(__dirname, "../public/bill-estimate.html"));
+  });
+  // We will add a success page for stripe
+  app.get("/success", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/success.html"));
   });
   app.get("/customers", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/customers.html"));
