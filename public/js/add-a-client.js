@@ -1,55 +1,39 @@
 
-console.log("add-a-client.js loaded");
-// Getting references to our form and input
-const addAClientForm = $("form.add-customer");
-const emailInput = $("input#email-input");
-const nameInput = $("input#name-input");
-const businessInput = $("input#business-input");
-const addressInput1 = $("input#address-input-1");
-const addressInput2 = $("input#address-input-2");
-const phoneInput = $("input#phone-input");
+$(document).ready(() => {
+  // Getting references to our form and inputs
+  const addaclientForm = $("form.add-a-client");
+  const emailInput = $("#emailinput");
+  const addressInput1 = $("#addressInput1");
+  const addressInput2 = $("#addressInput2");
+  const phone = $("#phone-input");
+  const clientName= $("#name-input");
 
-
-// When the signup button is clicked, we validate the email and password are not blank
-addAClientForm.on("submit", event => {
+  // When the form is submitted, we validate there's an email and password entered
+  addaclientForm.on("submit", event => {
     event.preventDefault();
-    console.log("submit")
     const clientData = {
-        email: emailInput.val().trim(),
-        clientName: nameInput.val().trim(),
-        address: addressInput1.val().trim(),
-        address2: addressInput2.val().trim(),
-        phone: phoneInput.val().trim(),
-        businessName: businessInput.val().trim()
-        
-    
-
+      email: emailInput.val().trim(),
+      clientName: clientName.val().trim(),
+    // address: addressInput1.val().trim()+" "+addressInput2.val().trim(),
+    address: "okst 900",
+    phone: phone.val().trim(),
+      newClient: true
     };
-    console.log(clientData)
-
-    // if (!userData.email || !userData.password) {
-    //     return;
-    // }
-    // If we have an email and password, run the signUpUser function
-    addAClient(clientData);
-    // emailInput.val("");
-    // passwordInput.val("");
-});
-
-
-  // Does a post to the signup route. If successful, we are redirected to the members page
-  // Otherwise we log any errors
-  function addAClient(clientData) {
-    $.post("/api/client",clientData)
+console.log(clientData);
+    $.post("/api/add-a-client", clientData)
       .then(() => {
-        window.location.replace("/account");
-        // If there's an error, handle it by throwing up a bootstrap alert
+        window.location.replace("/viewClients");
+        // If there's an error, log the error
       })
-      .catch(handleClientErr);
-  }
+      .catch(err => {
+        console.log(err);
+      });
 
-  function handleClientErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
-// });
+    // If we have an email and password we run the loginUser function and clear the form
+    //   loginUser(userData.email, userData.password);
+    //   emailInput.val("");
+    //   passwordInput.val(""); use for clearing the inputs
+
+    // loginUser does a post to our "api/login" route and if successful, redirects us the the account page
+  });
+});

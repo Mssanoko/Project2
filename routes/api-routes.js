@@ -34,15 +34,23 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-  app.post("/api/client", (req, res) => {
-    var clientData = req.body;
-    db.Client.create(clientData)
+  app.post("/api/add-a-client", (req, res) => {
+    console.log(req.body);
+    db.Client.create({
+      clientName: req.body.clientName,
+      address: req.body.address,
+      email: req.body.email,
+      phone: req.body.phone,
+      newClient: true
+    })
       .then(() => {
-        res.json(true);
+        res.redirect(307, "/api/add-a-client");
       })
       .catch(err => {
+        console.log(err);
         res.status(401).json(err);
+
+
       });
   });
 
