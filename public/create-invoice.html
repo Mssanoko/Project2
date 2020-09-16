@@ -9,64 +9,66 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            background-color: darkseagreen;
+        }
+
+        h1 {
+            color: tan;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: underline;
+        }
+
+        .form-group {
+
+            background-color: slategray;
+            color: tan;
+        }
+
+        a.navbar-brand {
+            font-style: oblique;
+        }
+
+        a {
+            color: white;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+
 </head>
-<style>
-    body {
-        background-color: darkseagreen;
-    }
-
-    h1 {
-        color: tan;
-        font-family: 'Times New Roman', Times, serif;
-        text-decoration: underline;
-    }
-
-    .form-group {
-
-        background-color: slategray;
-        color: tan;
-    }
-
-    a.navbar-brand {
-        font-style: oblique;
-    }
-
-    a {
-        color: white;
-    }
-
-    input[type=text],
-    select,
-    textarea {
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-    }
-
-    input[type=submit] {
-        background-color: #4CAF50;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    input[type=submit]:hover {
-        background-color: #45a049;
-    }
-
-    .container {
-        border-radius: 5px;
-        background-color: #f2f2f2;
-        padding: 20px;
-    }
-</style>
 
 <body>
     <!-- navbar -->
@@ -111,10 +113,10 @@
         </links>
     </nav>
     <br>
-
+    <!-- input fields -->
     <main class="container">
         <form action="action_page.php">
-
+            
             <label for="cname">Client Name:</label>
             <input type="text" id="cname" name="clientname" placeholder="First + Last">
 
@@ -122,7 +124,8 @@
             <input type="text" id="jaddress" name="jobaddress" placeholder="Street, City, State, Zip">
 
             <label for="jdescription">Job Description:</label>
-            <textarea id="jdescription" name="jobdescription" placeholder="Services Provided" style="height:200px"></textarea>
+            <textarea id="jdescription" name="jobdescription" placeholder="Services Provided"
+                style="height:200px"></textarea>
 
             <label for="jstartdate">Job Start Date:</label>
             <input type="text" id="jstartdate" name="jobstartdate" placeholder="MM/DD/YY">
@@ -137,7 +140,7 @@
             <input type="text" id="indue" name="invoicedue" placeholder="MM/DD/YY">
 
             <label for="paid">Paid?</label>
-            <input type="checkbox" checkbox= "unchecked" id="paid" name="paid">
+            <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
             <br>
 
             <button id=“print-button”>Print Invoice</button>
