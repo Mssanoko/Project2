@@ -30,6 +30,17 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/client", (req, res) => {
+    var clientData = req.body;
+    db.Client.create(clientData)
+      .then(() => {
+        res.json(true);
+      })
+      .catch(err => {
+        res.status(401).json(err);
+      });
+  });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();

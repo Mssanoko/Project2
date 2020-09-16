@@ -42,7 +42,7 @@ module.exports = function(app) {
   app.get("/viewClients", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/viewClients.html"));
   });
-  app.get("/addaclient", isAuthenticated, (req, res) => {
+  app.get("/add-a-client", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/add-a-client.html"));
   });
   app.get("/createInvoice", isAuthenticated, (req, res) => {
