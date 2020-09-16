@@ -58,4 +58,23 @@ module.exports = function(app) {
   app.get("/about", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/about.html"));
   });
+  app.get("/bill-estimate", isAuthenticated, (req, res) => {
+    // mock data to pass to /bill-estimate page using handlebars
+    var bills = {
+        bills: [
+            {
+                name: "Project1",
+                unit_amount: 2000,
+                quantity: 1,
+            },
+            {
+                name: "Project12",
+                unit_amount: 200,
+                quantity: 10,
+            },
+        ]
+    };
+    // create handlebars below with res.render()
+    res.sendFile(path.join(__dirname, "../public/bill-estimate.html"));
+  });
 };
