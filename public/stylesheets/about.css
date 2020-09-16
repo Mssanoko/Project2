@@ -50,7 +50,7 @@ h1{
   font-size: 18px;
 }
 
-button {
+.button {
   border: none;
   outline: 0;
   display: inline-block;
@@ -65,8 +65,9 @@ button {
 
 
 
-button:hover, a:hover {
+.button:hover, a:hover {
   opacity: 0.7;
+  color: white;
 }
 img {
   height: 200px;

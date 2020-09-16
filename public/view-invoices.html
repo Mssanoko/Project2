@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binvoice-Create Invoice</title>
+    <title>Binvoice-View Invoices</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -34,44 +33,13 @@
         a {
             color: white;
         }
-
-        input[type=text],
-        select,
-        textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            margin-top: 6px;
-            margin-bottom: 16px;
-            resize: vertical;
-        }
-
-        input[type=submit] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        input[type=submit]:hover {
-            background-color: #45a049;
-        }
-
-        .container {
-            border-radius: 5px;
-            background-color: #f2f2f2;
-            padding: 20px;
-        }
     </style>
 
 </head>
+​
 
 <body>
-    <!-- navbar -->
+  <!-- navbar -->
     <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
         <a class="navbar-brand" href="#">
             <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
@@ -113,48 +81,8 @@
         </links>
     </nav>
     <br>
-    <!-- input fields -->
-    <main class="container">
-        <form action="action_page.php">
-            
-            <label for="cname">Client Name:</label>
-            <input type="text" id="cname" name="clientname" placeholder="First + Last">
-
-            <label for="jaddress">Job Address:</label>
-            <input type="text" id="jaddress" name="jobaddress" placeholder="Street, City, State, Zip">
-
-            <label for="jdescription">Job Description:</label>
-            <textarea id="jdescription" name="jobdescription" placeholder="Services Provided"
-                style="height:200px"></textarea>
-
-            <label for="jstartdate">Job Start Date:</label>
-            <input type="text" id="jstartdate" name="jobstartdate" placeholder="MM/DD/YY">
-
-            <label for="jfinishdate">Job Finish Date:</label>
-            <input type="text" id="jfinishdate" name="jobfinishdate" placeholder="MM/DD/YY">
-
-            <label for="inamount">Invoice Amount:</label>
-            <input type="text" id="inamount" name="invoiceamount" placeholder="$$$">
-
-            <label for="indue">Invoice Due:</label>
-            <input type="text" id="indue" name="invoicedue" placeholder="MM/DD/YY">
-
-            <label for="paid">Paid?</label>
-            <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
-            <br>
-
-            <button id=“print-button”>Print Invoice</button>
-            <script type=“text/javascript”>
-            const printBtn = document.getElementById(“print-button”);
-            printBtn.onclick = function(){
-            window.print()
-            };
-            </script>
-
-        </form>
-    </main>
 
 
+    
 </body>
-
 </html>
