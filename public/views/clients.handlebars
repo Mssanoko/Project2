@@ -1,0 +1,60 @@
+<h1>View Clients</h1>
+
+<ul>
+  {{#each clients}}
+  <li>
+    <p>
+      {{this.id}}. {{this.client}}
+
+      <button data-clientid="{{this.id}}" class="delclient">Delete Client</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>Update Client Info</h2>
+<form id="updateclient" class="button-size">
+  <select name="id">
+		{{#each clients}}
+			<option value="{{this.id}}">{{this.client}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="client" placeholder="client"></textarea>
+  <button type="submit">Update</button>
+</form>
+
+<script type="text/javascript">
+  $(".delclient").on("click", function(event) {
+    var id = $(this).data("clientid");
+
+    $.ajax("/api/clients/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        location.reload();
+      }
+    );
+  });
+
+  $("#updateclient").on("submit", function(event) {
+    event.preventDefault();
+
+    
+    var id = $("[name=id]").val().trim();
+
+    var updatedClient = {
+      plan: $("#updateclient [name=client]").val().trim()
+    };
+
+    $.ajax("/api/clients/" + id, {
+      type: "PUT",
+      data: updatedClient
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        location.reload();
+      }
+    );
+  });
+</script>
