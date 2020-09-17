@@ -38,4 +38,5 @@ db.sequelize.sync().then(() => {
     );
   });
 });
+// eslint-disable-next-line prettier/prettier
 //double checking server file, all good to go

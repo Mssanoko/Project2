@@ -2,6 +2,11 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+//store stripe developer api here
+let stripe_api_key = '';
+
+const stripe = require('stripe')(stripe_api_key);
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -29,15 +34,23 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
-  app.post("/api/client", (req, res) => {
-    var clientData = req.body;
-    db.Client.create(clientData)
+  app.post("/api/add-a-client", (req, res) => {
+    console.log(req.body);
+    db.Client.create({
+      clientName: req.body.clientName,
+      address: req.body.address,
+      email: req.body.email,
+      phone: req.body.phone,
+      newClient: true
+    })
       .then(() => {
-        res.json(true);
+        res.redirect(307, "/api/add-a-client");
       })
       .catch(err => {
+        console.log(err);
         res.status(401).json(err);
+
+
       });
   });
 
@@ -61,4 +74,29 @@ module.exports = function(app) {
       });
     }
   });
+  // create api route for stripe
+  app.post("/create-checkout-session", async (req, res) => {
+    // pass in stripe values as req.body here  
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: "T-shirt",
+            },
+            unit_amount: 2000,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      success_url: "http://localhost:8080/",
+      cancel_url: "https://example.com/cancel",
+    });
+  
+    res.json({ id: session.id });
+  });
+    
 };
