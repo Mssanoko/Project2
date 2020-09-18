@@ -39,17 +39,17 @@ module.exports = function(app) {
   app.get("/account", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/account.html"));
   });
-  app.get("/viewClients", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/viewClients.html"));
+  app.get("/view-clients", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/view-clients.html"));
   });
   app.get("/add-a-client", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/add-a-client.html"));
   });
-  app.get("/createInvoice", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/createInvoice.html"));
+  app.get("/create-invoice", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
   });
-  app.get("/viewInvoices", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/viewInvoices.html"));
+  app.get("/view-invoices", isAuthenticated, (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/view-invoices.html"));
   });
 
   // app.get("/product-services", isAuthenticated, (req, res) => {
