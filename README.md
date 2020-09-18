@@ -2,9 +2,10 @@
 
 # Binvoice App
 
-## Purpose/Elevator Pitch
+## Screenshoots
 
-* Elevator pitch: 
+![Screen Shot 2020-09-18 at 12 58 39 AM](https://user-images.githubusercontent.com/61078512/93558396-5a3c8300-f94b-11ea-9b93-ee7a8594b38d.png)
+![Screen Shot 2020-09-18 at 12 59 43 AM](https://user-images.githubusercontent.com/61078512/93558416-688a9f00-f94b-11ea-87d9-78f4d9741057.png)
 
 ## Concept/User Story
 
