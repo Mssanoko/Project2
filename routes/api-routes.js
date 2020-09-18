@@ -3,7 +3,7 @@ const db = require("../models");
 const passport = require("../config/passport");
 
 //store stripe developer api here
-let stripe_api_key = '';
+let stripe_api_key = 'sk_test_51HRJhsHZ3fo1xYKD2O8DGS8HsVZPG03eM6u3LcQxlUTj71kc5Wwhdq5F7CZqleJfFSua7WPEBuLtDeH15P4nNbPf00tguq6Q7F';
 
 const stripe = require('stripe')(stripe_api_key);
 
