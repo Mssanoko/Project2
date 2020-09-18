@@ -1,6 +1,6 @@
 # PROJECT_2
 
-# Bonvoice App
+# Binvoice App
 
 ## Purpose/Elevator Pitch
 
