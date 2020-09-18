@@ -21,13 +21,12 @@
 
 ```
 Tasks and Roles
-1. Creating database
-2. Researching APIs and getting keys 
-3. Creating user interface (UI)
-4. Connecting database with UI
-5. Coding and building
-6. Testing
-7. Creating demo presentation
+1. Creating database 
+2. Creating user interface (UI)
+3. Connecting database with UI
+4. Coding and building
+5. Testing
+6. Creating demo presentation
 
 ```
 
