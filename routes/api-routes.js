@@ -46,6 +46,18 @@ module.exports = function(app) {
       });
   });
 
+  app.post("/api/create-invoice", (req, res) => {
+    console.log(req.body);
+    db.Invoice.create(req.body)
+      .then(() => {
+        res.json(true);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(401).json(err);
+      });
+  });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
