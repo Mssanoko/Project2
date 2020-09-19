@@ -1,0 +1,61 @@
+<h1>View Invoices</h1>
+
+<ul>
+  {{#each invoices}}
+  <li>
+    <p>
+      {{this.id}}. {{this.invoice}}
+
+      <button data-invoiceid="{{this.id}}" class="delinvoice">Delete Invoice</button>
+    </p>
+  </li>
+  {{/each}}
+</ul>
+
+<h2>Update an Invoice</h2>
+<form id="updateinvoice" class="button-size">
+  <select name="id">
+		{{#each invoices}}
+			<option value="{{this.id}}">{{this.invoice}}</option>
+		{{/each}}
+	</select>
+  <textarea type="text" name="invoice" placeholder="invoice"></textarea>
+  <button type="submit">Update Invoice</button>
+</form>
+
+<script type="text/javascript">
+  $(".delinvoice").on("click", function(event) {
+    var id = $(this).data("invoiceid");
+
+    $.ajax("/api/invoices/" + id, {
+      type: "DELETE"
+    }).then(
+      function() {
+        console.log("deleted id ", id);
+        location.reload();
+      }
+    );
+  });
+
+
+  $("#updateinvoice").on("submit", function(event) {
+    event.preventDefault();
+
+    
+    var id = $("[name=id]").val().trim();
+
+    var updatedInvoice = {
+      plan: $("#updateinvoice [name=invoice]").val().trim()
+    };
+
+    $.ajax("/api/invoices/" + id, {
+      type: "PUT",
+      data: updatedInvoice
+    }).then(
+      function() {
+        console.log("updated id ", id);
+        location.reload();
+      }
+    );
+  });
+</script>
