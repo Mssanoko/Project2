@@ -5,23 +5,24 @@ $(document).ready(() => {
   const addressInput1 = $("#addressInput1");
   const addressInput2 = $("#addressInput2");
   const phone = $("#phone-input");
-  const clientName= $("#name-input");
+  const clientName = $("#name-input");
 
   // When the form is submitted, we validate there's an email and password entered
   addaclientForm.on("submit", event => {
     event.preventDefault();
+    console.log(addressInput1.val());
     const clientData = {
       email: emailInput.val().trim(),
       clientName: clientName.val().trim(),
-    // address: addressInput1.val().trim()+" "+addressInput2.val().trim(),
-    address: "okst 900",
-    phone: phone.val().trim(),
+      // address: addressInput1.val().trim()+" "+addressInput2.val().trim(),
+      address: addressInput1.val().trim(),
+      phone: phone.val().trim(),
       newClient: true
     };
-console.log(clientData);
+    console.log(clientData);
     $.post("/api/add-a-client", clientData)
-      .then(() => {
-        window.location.replace("/viewClients");
+      .done(() => {
+        window.location.replace("/add-a-client");
         // If there's an error, log the error
       })
       .catch(err => {

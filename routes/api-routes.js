@@ -39,12 +39,11 @@ module.exports = function(app) {
       newClient: true
     })
       .then(() => {
-        res.redirect(307, "/api/add-a-client");
+        res.redirect(307, "/account");
       })
       .catch(err => {
         console.log(err);
         res.status(401).json(err);
-
       });
   });
   // Route for logging user out
