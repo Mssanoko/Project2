@@ -24,8 +24,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     phone: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
     newClient: {
       type: DataTypes.BOOLEAN,
