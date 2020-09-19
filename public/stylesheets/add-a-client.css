@@ -1,0 +1,23 @@
+body {
+    background-color: darkseagreen;
+}
+
+h1 {
+    color: tan;
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+}
+
+.form-group {
+
+    background-color: slategray;
+    color: tan;
+}
+
+a.navbar-brand {
+    font-style: oblique;
+}
+
+a {
+    color: white;
+}
