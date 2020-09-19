@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binvoice-Create Invoice</title>
+    <title>Binvoice-View Invoices</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link href="stylesheets/create-invoice.css" rel="stylesheet">
-    
-
+    <link href="stylesheets/view-invoices.css" rel="stylesheet">
 
 </head>
+​
 
 <body>
-    <!-- navbar -->
-    <header>
+  <!-- navbar -->
+  <header>
     <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
         <a class="navbar-brand" href="#">
             <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
@@ -60,48 +58,8 @@
     </nav>
 </header>
     <br>
-    <!-- input fields -->
-    <main class="container">
-        <form action="action_page.php">
-
-            <label for="cname">Client Name:</label>
-            <input type="text" id="cname" name="clientname" placeholder="First + Last">
-
-            <label for="jaddress">Job Address:</label>
-            <input type="text" id="jaddress" name="jobaddress" placeholder="Street, City, State, Zip">
-
-            <label for="jdescription">Job Description:</label>
-            <textarea id="jdescription" name="jobdescription" placeholder="Services Provided"
-                style="height:200px"></textarea>
-
-            <label for="jstartdate">Job Start Date:</label>
-            <input type="text" id="jstartdate" name="jobstartdate" placeholder="MM/DD/YY">
-
-            <label for="jfinishdate">Job Finish Date:</label>
-            <input type="text" id="jfinishdate" name="jobfinishdate" placeholder="MM/DD/YY">
-
-            <label for="inamount">Invoice Amount:</label>
-            <input type="text" id="inamount" name="invoiceamount" placeholder="$$$">
-
-            <label for="indue">Invoice Due:</label>
-            <input type="text" id="indue" name="invoicedue" placeholder="MM/DD/YY">
-
-            <label for="paid">Paid?</label>
-            <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
-            <br>
-
-            <button id=“print-button”>Print Invoice</button>
-            <script type=“text/javascript”>
-            const printBtn = document.getElementById(“print-button”);
-            printBtn.onclick = function(){
-            window.print()
-            };
-            </script>
-
-        </form>
-    </main>
 
 
+    
 </body>
-
 </html>

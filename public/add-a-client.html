@@ -9,28 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</head>
+    <link href="stylesheets/add-a-client.css" rel="stylesheet">
 
-<style>
-body {
-    background-color: darkseagreen;
-}
-
-h1 {
-    color: tan;
-    font-family: 'Times New Roman', Times, serif;
-    text-decoration: underline;
-}
-
-.form-group {
-
-    background-color: slategray;
-    color: tan;
-}
-
-a.navbar-brand {
-    font-style: oblique;
-}
 
 a {
     color:white;
@@ -80,31 +60,35 @@ a {
                 <hr>
                 <form class="add-a-client">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email address:</label>
-                        <input type="email" class="form-control" id="emailinput" placeholder="Email">
+
+                        <label for="emailinput">Email address:</label>
+                        <input type="email" class="form-control" id="emailinput" name="emailinput" placeholder="Email">
+
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputName">Name:</label>
-                        <input type="text" class="form-control" id="name-input" placeholder="First and Last Name">
+                        <label for="name-input">Name:</label>
+                        <input type="text" class="form-control" id="name-input" name="name-input" placeholder="First and Last Name">
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="exampleInputName">Business Name:</label>
-                        <input type="business" class="form-control" id="business-input" placeholder="(Optional)">
-                    </div> -->
 
                     <div class="form-group">
-                        <label for="exampleInputAddress">Address:</label>
-                        <input type="text" class="form-control" id="addressInput1" placeholder="Street Address">
+                        <label for="business-input">Business Name:</label>
+                        <input type="text" class="form-control" id="business-input" name="business-input" placeholder="(Optional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressinput1">Address:</label>
+                        <input type="text" class="form-control" id="addressinput1" name="addressinput1" placeholder="Street Address">
                         
-                        <input type="text" class="form-control" id="addressInput2"
+                        <input type="text" class="form-control" id="addressinput2"
+
                             placeholder="City, State and Zipcode">
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputPhone">Phone Number:</label>
-                        <input type="text" class="form-control" id="phone-input" placeholder="10 Digit Phone Number">
+                        <label for="phone-input">Phone Number:</label>
+                        <input type="text" class="form-control" id="phone-input" name="phone-input" placeholder="10 Digit Phone Number">
                     </div>
 
                     <div style="display: none" id="alert" class="alert alert-danger" role="alert">
@@ -114,8 +98,9 @@ a {
                     <button type="submit" class="btn btn-secondary">Add Client</button>
                 </form>
                 <br />
-                <p>Or view existing clients here: <button type="submit" class="btn btn-secondary">Client List</button></p>
-                
+                <p>Or view existing clients here: <button type="submit" class="btn btn-secondary">Client List</button>
+                </p>
+
             </div>
         </div>
     </main>

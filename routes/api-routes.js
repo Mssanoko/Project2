@@ -2,6 +2,11 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
+//store stripe developer api here
+let stripe_api_key = 'sk_test_51HRJhsHZ3fo1xYKD2O8DGS8HsVZPG03eM6u3LcQxlUTj71kc5Wwhdq5F7CZqleJfFSua7WPEBuLtDeH15P4nNbPf00tguq6Q7F';
+
+const stripe = require('stripe')(stripe_api_key);
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -31,21 +36,16 @@ module.exports = function(app) {
   });
   app.post("/api/add-a-client", (req, res) => {
     console.log(req.body);
-    db.Client.create({
-      clientName: req.body.clientName,
-      address: req.body.address,
-      email: req.body.email,
-      phone: req.body.phone,
-      newClient: true
-    })
+    db.Client.create(req.body)
       .then(() => {
-        res.redirect(307, "/account");
+        res.json(true);
       })
       .catch(err => {
         console.log(err);
         res.status(401).json(err);
       });
   });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -66,4 +66,29 @@ module.exports = function(app) {
       });
     }
   });
+  // create api route for stripe
+  app.post("/create-checkout-session", async (req, res) => {
+    // pass in stripe values as req.body here  
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price_data: {
+            currency: "usd",
+            product_data: {
+              name: "T-shirt",
+            },
+            unit_amount: 2000,
+          },
+          quantity: 1,
+        },
+      ],
+      mode: "payment",
+      success_url: "http://localhost:8080/",
+      cancel_url: "https://example.com/cancel",
+    });
+  
+    res.json({ id: session.id });
+  });
+    
 };
