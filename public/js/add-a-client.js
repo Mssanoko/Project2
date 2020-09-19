@@ -42,7 +42,7 @@ addAClientForm.on("submit", event => {
   function addAClient(clientData) {
     $.post("/api/add-a-client",clientData)
       .then(() => {
-        window.location.replace("/account");
+        window.location.replace("/view-clients");
       })
       .catch(handleClientErr);
   }
