@@ -1,0 +1,88 @@
+<!-- navbar -->
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+    <a class="navbar-brand" href="#">
+        <h1>BINVOICE</h1>BILL. COLLECT. CHILL.
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <links class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ml-auto">
+            <!-- navbar links -->
+            <li class="nav-item">
+                <a class="nav-link" href="home.html">
+                    <h4>Home</h4>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="account.html">
+                    <h4>Account</h4>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="create-invoice.html">
+                    <h4>Create Invoice</h4>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">
+                    <h4>About Us/Help</h4>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="log-in.html">
+                    <h4>Log Out</h4>
+                </a>
+            </li>
+        </ul>
+    </links>
+</nav>
+<br>
+<!-- input fields -->
+<main class="container">
+    <form class="addAnInvoice">
+
+        <label for="clientname">Client Name ("Create a client first <a href="/add-a-client">here</a>"): </label>
+        <!-- <input type="text" id="cname" name="clientname" placeholder="First + Last"> -->
+        <select id="clientname" name="clientname">
+            {{#each clientData}}
+            <option value="{{this.id}}" data-address1 ="{{this.address}}" data-address2="{{this.address2}}">{{this.clientName}}</option>
+            {{/each}}
+        </select>
+        {{test}}
+
+        <label for="jobaddress">Job Address:</label>
+        <input type="text" id="jobaddress" name="jobaddress" placeholder="Street, City, State, Zip">
+
+        <label for="jobdescription">Job Description:</label>
+        <textarea id="jobdescription" name="jobdescription" placeholder="Services Provided"
+            style="height:200px"></textarea>
+
+        <label for="jobstartdate">Job Start Date:</label>
+        <input type="text" id="jobstartdate" name="jobstartdate" placeholder="MM/DD/YY">
+
+        <label for="jobfinishdate">Job Finish Date:</label>
+        <input type="text" id="jobfinishdate" name="jobfinishdate" placeholder="MM/DD/YY">
+
+        <label for="invoiceamount">Invoice Amount:</label>
+        <input type="text" id="invoiceamount" name="invoiceamount" placeholder="$$$">
+
+        <label for="invoicedue">Invoice Due:</label>
+        <input type="text" id="invoicedue" name="invoicedue" placeholder="MM/DD/YY">
+
+        <label for="paid">Paid?</label>
+        <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
+        <br>
+
+        <button id=“print-button”>Print Invoice</button>
+        <script type=“text/javascript”>
+            const printBtn = document.getElementById(“print-button”);
+            printBtn.onclick = function(){
+            window.print()
+            };
+            </script>
+
+    </form>
+</main>

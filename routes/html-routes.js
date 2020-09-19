@@ -1,6 +1,8 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
 
+const db = require("../models");
+
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -46,7 +48,22 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/add-a-client.html"));
   });
   app.get("/create-invoice", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
+    db.Client.findAll({
+      // where: {
+      //   userId: req.user.id
+      // }
+    })
+    .then( data => {
+      //var test = [{clientName: "Joe Schmoe", id: 4, address1: "I cant tell you.", address2: "Read address1"},{clientName: "Bobby-Joe's Shop", id: 2, address1: "Everyone knows", address2: "Here"} ];
+      res.render("create-invoice", {
+        layout: "create-invoice-top",
+        title: "invoice-generator",
+        clientData: JSON.parse(JSON.stringify(data)),
+        test: JSON.stringify(data[0].clientName)
+      });
+    });
+    
+    // res.sendFile(path.join(__dirname, "../public/create-invoice.html"));
   });
   app.get("/view-invoices", isAuthenticated, (req, res) => {
     res.sendFile(path.join(__dirname, "../public/view-invoices.html"));
