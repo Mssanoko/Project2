@@ -16,6 +16,13 @@ const businessInput = $("input#business-input");
 const addressInput1 = $("input#addressinput1");
 const addressInput2 = $("input#addressinput2");
 const phoneInput = $("input#phone-input");
+const invoiceDue = $("input#invoiceDue");
+
+
+// const printBtn = document.getElementById(“print-button”);
+// printBtn.onclick = function(){
+// window.print()
+// };
 
 
 // When the signup button is clicked, we validate the email and password are not blank
@@ -28,9 +35,9 @@ addAnInvoice.on("submit", event => {
         jobDescription: addressInput1.val().trim(),
         jobStartDate: addressInput2.val().trim(),
         jobFinishDate: phoneInput.val().trim(),
-        invoiceAmount: businessInput.val().trim()
-        invoiceDue:businessInput.val().trim()
-        paid:addAnInvoice.val().trim()
+        invoiceAmount: businessInput.val().trim(),
+        invoiceDue:invoiceDue.val().trim(),
+        // paid:addAnInvoice.val().trim()
 
     };
     console.log(clientData)
