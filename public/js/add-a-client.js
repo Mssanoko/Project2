@@ -1,12 +1,12 @@
 
 console.log("add-a-client.js loaded");
 // Getting references to our form and input
-const addAClientForm = $("form.add-customer");
-const emailInput = $("input#email-input");
+const addAClientForm = $("form.add-a-client");
+const emailInput = $("input#emailinput");
 const nameInput = $("input#name-input");
 const businessInput = $("input#business-input");
-const addressInput1 = $("input#address-input-1");
-const addressInput2 = $("input#address-input-2");
+const addressInput1 = $("input#addressinput1");
+const addressInput2 = $("input#addressinput2");
 const phoneInput = $("input#phone-input");
 
 
@@ -40,10 +40,9 @@ addAClientForm.on("submit", event => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function addAClient(clientData) {
-    $.post("/api/client",clientData)
+    $.post("/api/add-a-client",clientData)
       .then(() => {
         window.location.replace("/account");
-        // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleClientErr);
   }

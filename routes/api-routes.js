@@ -36,21 +36,13 @@ module.exports = function(app) {
   });
   app.post("/api/add-a-client", (req, res) => {
     console.log(req.body);
-    db.Client.create({
-      clientName: req.body.clientName,
-      address: req.body.address,
-      email: req.body.email,
-      phone: req.body.phone,
-      newClient: true
-    })
+    db.Client.create(req.body)
       .then(() => {
-        res.redirect(307, "/api/add-a-client");
+        res.json(true);
       })
       .catch(err => {
         console.log(err);
         res.status(401).json(err);
-
-
       });
   });
 
