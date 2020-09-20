@@ -62,6 +62,8 @@
     <br>
     <!-- input fields -->
     <main class="container">
+        <h2>Create an Invoice</h2>
+                <hr>
         <form action="action_page.php">
 
             <label for="cname">Client Name:</label>
@@ -90,10 +92,13 @@
             <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
             <br>
 
-            <button id=“print-button”>Print Invoice</button>
+            <button onclick="myFunction()">Print Invoice</button>
+            <script>function myFunction() {window.print();}
+            </script>
+            <!-- <button id=“print-button”>Print Invoice</button>
             <script type=“text/javascript”>
          
-            </script>
+            </script> -->
 
         </form>
     </main>
