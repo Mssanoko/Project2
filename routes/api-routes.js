@@ -3,11 +3,11 @@ const db = require("../models");
 const passport = require("../config/passport");
 
 //store stripe developer api here
-let stripe_api_key = 'sk_test_51HRJhsHZ3fo1xYKD2O8DGS8HsVZPG03eM6u3LcQxlUTj71kc5Wwhdq5F7CZqleJfFSua7WPEBuLtDeH15P4nNbPf00tguq6Q7F';
+// let stripe_api_key = 'sk_test_51HRJhsHZ3fo1xYKD2O8DGS8HsVZPG03eM6u3LcQxlUTj71kc5Wwhdq5F7CZqleJfFSua7WPEBuLtDeH15P4nNbPf00tguq6Q7F';
 
-const stripe = require('stripe')(stripe_api_key);
+// const stripe = require('stripe')(stripe_api_key);
 
-module.exports = function(app) {
+module.exports = function (app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -57,7 +57,7 @@ module.exports = function(app) {
         res.status(401).json(err);
       });
   });
-
+  
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
@@ -78,29 +78,59 @@ module.exports = function(app) {
       });
     }
   });
-  // create api route for stripe
-  app.post("/create-checkout-session", async (req, res) => {
-    // pass in stripe values as req.body here  
-    const session = await stripe.checkout.sessions.create({
-      payment_method_types: ["card"],
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: "T-shirt",
-            },
-            unit_amount: 2000,
-          },
-          quantity: 1,
-        },
-      ],
-      mode: "payment",
-      success_url: "http://localhost:8080/",
-      cancel_url: "https://example.com/cancel",
-    });
-  
-    res.json({ id: session.id });
+
+  app.get("/api/client", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      db.Client.findAll()
+        .then(function (clientdata) {
+          res.json(clientdata);
+        })
+
+    }
   });
-    
+
+  app.get("/api/create-invoice", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      db.Invoice.findAll()
+        .then(function (inData) {
+          res.json(inData);
+        })
+
+    }
+  });
+  // create api route for stripe
+  // app.post("/create-checkout-session", async (req, res) => {
+  //   // pass in stripe values as req.body here  
+  //   const session = await stripe.checkout.sessions.create({
+  //     payment_method_types: ["card"],
+  //     line_items: [
+  //       {
+  //         price_data: {
+  //           currency: "usd",
+  //           product_data: {
+  //             name: "T-shirt",
+  //           },
+  //           unit_amount: 2000,
+  //         },
+  //         quantity: 1,
+  //       },
+  //     ],
+  //     mode: "payment",
+  //     success_url: "http://localhost:8080/",
+  //     cancel_url: "https://example.com/cancel",
+  //   });
+
+  //   res.json({ id: session.id });
+  // });
+
 };

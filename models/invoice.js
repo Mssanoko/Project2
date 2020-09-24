@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       unique: false
     },
     invoiceAmount: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: false
     },
@@ -36,15 +36,15 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false
-    },
-    paid: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: false
     }
+    // paid: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   unique: false
+    // }
   });
-  Invoice.associate = function(models) {
-    Invoice.belongsTo(models.Client);
-  };
+  // Invoice.associate = function(models) {
+  //   Invoice.belongsTo(models.Client);
+  // };
   return Invoice;
 };
