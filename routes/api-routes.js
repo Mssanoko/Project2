@@ -57,6 +57,7 @@ module.exports = function (app) {
         res.status(401).json(err);
       });
   });
+  
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();

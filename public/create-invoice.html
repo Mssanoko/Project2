@@ -64,34 +64,40 @@
     <main class="container">
         <form class="creat-invoice">
 
-            <label for="cname">Client Name:</label>
-            <input type="text" id="cname" name="clientname" placeholder="First + Last">
+        <h2>Create an Invoice</h2>
+                <hr>
 
-            <label for="jaddress">Job Address:</label>
-            <input type="text" id="jaddress" name="jobaddress" placeholder="Street, City, State, Zip">
+            <label for="cname">Client Name:</label>
+            <input type="text" id="cname" name="cname" placeholder="First + Last">
+
+            <label for="jobaddress">Job Address:</label>
+            <input type="text" id="jobaddress" name="jobaddress" placeholder="Street, City, State, Zip">
 
             <label for="jdescription">Job Description:</label>
-            <textarea id="jdescription" name="jobdescription" placeholder="Services Provided"
+            <textarea id="jdescription" name="jdescription" placeholder="Services Provided"
                 style="height:200px"></textarea>
 
             <label for="jstartdate">Job Start Date:</label>
             <input type="text" id="jstartdate" name="jobstartdate" placeholder="MM/DD/YY">
 
-            <label for="jfinishdate">Job Finish Date:</label>
-            <input type="text" id="jfinishdate" name="jobfinishdate" placeholder="MM/DD/YY">
+            <label for="jobfinishdate">Job Finish Date:</label>
+            <input type="text" id="jobfinishdate" name="jobfinishdate" placeholder="MM/DD/YY">
 
-            <label for="inamount">Invoice Amount:</label>
-            <input type="text" id="inamount" name="invoiceamount" placeholder="$$$">
+            <label for="invoiceamount">Invoice Amount:</label>
+            <input type="text" id="invoiceamount" name="invoiceamount" placeholder="$$$">
 
             <label for="indue">Invoice Due:</label>
-            <input type="text" id="indue" name="invoicedue" placeholder="MM/DD/YY">
+            <input type="text" id="invoiceDue" name="invoiceDue" placeholder="MM/DD/YY">
 
             <label for="paid">Paid?</label>
             <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
             <br>
 
-            <button type=“submit”><a href="/view-invoices"></a>Create Invoice</button><button id=“print-button”>Print Invoice</button>
-        
+
+            <button type=“submit”><a href="/view-invoices"></a>Create Invoice</button><button onclick="myFunction()">Print Invoice</button>
+            <script>function myFunction() {window.print();}
+            </script>
+
 
         </form>
     </main>
