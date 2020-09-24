@@ -29,29 +29,29 @@
             <ul class="navbar-nav ml-auto">
                 <!-- navbar links -->
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">
+                    <a class="nav-link" href="/">
                         <h4>Home</h4>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="account.html">
+                    <a class="nav-link" href="/account">
                         <h4>Account</h4>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="create-invoice.html">
+                    <a class="nav-link" href="/create-invoice">
                         <h4>Create Invoice</h4>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="about.html">
+                    <a class="nav-link" href="/about">
                         <h4>About Us/Help</h4>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="log-in.html">
+                    <a class="nav-link" href="/log-in">
                         <h4>Log Out</h4>
                     </a>
                 </li>
@@ -62,7 +62,7 @@
     <br>
     <!-- input fields -->
     <main class="container">
-        <form action="action_page.php">
+        <form class="creat-invoice">
 
             <label for="cname">Client Name:</label>
             <input type="text" id="cname" name="clientname" placeholder="First + Last">
@@ -90,17 +90,12 @@
             <input type="checkbox" checkbox="unchecked" id="paid" name="paid">
             <br>
 
-            <button id=“print-button”>Print Invoice</button>
-            <script type=“text/javascript”>
-            const printBtn = document.getElementById(“print-button”);
-            printBtn.onclick = function(){
-            window.print()
-            };
-            </script>
+            <button type=“submit”><a href="/view-invoices"></a>Create Invoice</button><button id=“print-button”>Print Invoice</button>
+        
 
         </form>
     </main>
-
+    <script src="js/create-invoice.js"></script>
 
 </body>
 
